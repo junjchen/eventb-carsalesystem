@@ -4,65 +4,69 @@
 <org.eventb.core.seesContext name="A" org.eventb.core.target="C2"/>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="register"/>
 <org.eventb.core.variable name="*" org.eventb.core.identifier="garage"/>
-<org.eventb.core.variable name="," org.eventb.core.identifier="car"/>
 <org.eventb.core.variable name="." org.eventb.core.identifier="location"/>
 <org.eventb.core.variable name="4" org.eventb.core.identifier="new_car"/>
 <org.eventb.core.variable name="6" org.eventb.core.identifier="old_car"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="E" org.eventb.core.identifier="sold_car"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="test_drive"/>
-<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="(" org.eventb.core.assignment="purchase_date ≔ ∅" org.eventb.core.label="act8"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="sold_date ≔ ∅" org.eventb.core.label="act9"/>
+<org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="purchase_date ≔ ∅" org.eventb.core.label="act8"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="sold_date ≔ ∅" org.eventb.core.label="act9"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="transfer_date ≔ ∅" org.eventb.core.label="act10"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RegisterUser">
+<org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RegisterUser">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="RegisterUser"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeregisterUser">
+<org.eventb.core.event name="H" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeregisterUser">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeregisterUser"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CreateGarage">
+<org.eventb.core.event name="I" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CreateGarage">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="CreateGarage"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RequestDrive">
+<org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RequestDrive">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="RequestDrive"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EndDrive">
+<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EndDrive">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="EndDrive"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="H" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="TransferCar">
+<org.eventb.core.event name="L" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="TransferCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="TransferCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd6" org.eventb.core.predicate="d ∈ DATE"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="transfer_date ≔ transfer_date ∪ {c ↦ d}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="I" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PurchaseCar">
+<org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PurchaseCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="PurchaseCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="d ∈ DATE"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="purchase_date(c) ≔ d" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="purchase_date(c) ≔ d " org.eventb.core.label="act3"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SellOldCar">
+<org.eventb.core.event name="N" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SellOldCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SellOldCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="d ∈ DATE"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="sold_date ≔ sold_date ∪ {o ↦ d}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="sold_date(o) ≔ d" org.eventb.core.label="act5"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SellNewCar">
+<org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SellNewCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SellNewCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="d ∈ DATE"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="sold_date ≔ sold_date ∪ {n ↦ d}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="sold_date(n) ≔ d" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="L" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExchangeOldCarForNewCar">
+<org.eventb.core.event name="P" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ExchangeOldCarForNewCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ExchangeOldCarForNewCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="d"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd4" org.eventb.core.predicate="d ∈ DATE"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="purchase_date ≔ purchase_date ∪ {o ↦ d}" org.eventb.core.label="act5"/>
-<org.eventb.core.action name="+" org.eventb.core.assignment="sold_date ≔ sold_date ∪ {n ↦ d}" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="purchase_date(o) ≔ d" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="sold_date(n) ≔ d" org.eventb.core.label="act6"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ListCar">
+<org.eventb.core.event name="Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ListCar">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ListCar"/>
 </org.eventb.core.event>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="S" org.eventb.core.identifier="purchase_date"/>
-<org.eventb.core.invariant name="T" org.eventb.core.label="inv1" org.eventb.core.predicate="&#9;purchase_date ∈ CAR ⇸ DATE"/>
-<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="U" org.eventb.core.identifier="sold_date"/>
-<org.eventb.core.invariant name="V" org.eventb.core.label="inv2" org.eventb.core.predicate="&#9;sold_date ∈ CAR ⇸ DATE"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="R" org.eventb.core.identifier="purchase_date"/>
+<org.eventb.core.invariant name="S" org.eventb.core.label="inv1" org.eventb.core.predicate="purchase_date ∈ (new_car ∪ old_car ∪ sold_car) ⇸ DATE"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="T" org.eventb.core.identifier="sold_date"/>
+<org.eventb.core.invariant name="U" org.eventb.core.label="inv2" org.eventb.core.predicate="sold_date ∈ sold_car → DATE"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="V" org.eventb.core.identifier="transfer_date"/>
+<org.eventb.core.invariant name="W" org.eventb.core.label="inv3" org.eventb.core.predicate="transfer_date ∈ (new_car ∪ old_car ∪ sold_car) ↔ DATE"/>
 </org.eventb.core.machineFile>
