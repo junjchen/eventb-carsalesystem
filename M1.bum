@@ -3,7 +3,7 @@
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="register ≔ ∅" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="garage ≔ ∅" org.eventb.core.label="act2"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="car ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="sold_car ≔ ∅" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="location ≔ ∅" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="new_car ≔ ∅" org.eventb.core.label="act5"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="old_car ≔ ∅" org.eventb.core.label="act6"/>
@@ -13,18 +13,17 @@
 <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="register ⊆ USER"/>
 <org.eventb.core.variable name="*" org.eventb.core.identifier="garage"/>
 <org.eventb.core.invariant name="+" org.eventb.core.label="inv2" org.eventb.core.predicate="garage ⊆ GARAGE"/>
-<org.eventb.core.variable name="," org.eventb.core.identifier="car"/>
-<org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="car ⊆ CAR"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="sold_car ⊆ CAR"/>
 <org.eventb.core.variable name="." org.eventb.core.identifier="location"/>
-<org.eventb.core.invariant name="/" org.eventb.core.label="inv4" org.eventb.core.predicate="location ∈ car → garage"/>
+<org.eventb.core.invariant name="/" org.eventb.core.label="inv4" org.eventb.core.predicate="old_car ⊆ CAR"/>
 <org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RegisterUser">
-<org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ USER ∖ register"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="register ≔ register ∪ {u}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="u"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeregisterUser">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="u"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ register ∖ dom(test_drive)"/>
+<org.eventb.core.guard name="(" org.eventb.core.comment="Only allow to deregister user when he's not test driving" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ register ∖ dom(test_drive)"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="register ≔ register ∖ {u}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CreateGarage">
@@ -33,20 +32,20 @@
 <org.eventb.core.action name=")" org.eventb.core.assignment="garage ≔ garage ∪ {g}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="4" org.eventb.core.identifier="new_car"/>
-<org.eventb.core.invariant name="5" org.eventb.core.label="inv5" org.eventb.core.predicate="new_car ⊆ car"/>
+<org.eventb.core.invariant name="5" org.eventb.core.label="inv5" org.eventb.core.predicate="new_car ⊆ CAR"/>
 <org.eventb.core.variable name="6" org.eventb.core.identifier="old_car"/>
-<org.eventb.core.invariant name="7" org.eventb.core.label="inv6" org.eventb.core.predicate="old_car ⊆ car"/>
-<org.eventb.core.invariant name="8" org.eventb.core.label="inv7" org.eventb.core.predicate="new_car ∩ old_car = ∅"/>
-<org.eventb.core.invariant name="9" org.eventb.core.label="inv8" org.eventb.core.predicate="new_car ∪ old_car = car"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv6" org.eventb.core.predicate="location ∈ (new_car ∪ old_car) → garage"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="inv7" org.eventb.core.predicate="new_car ∩ old_car ∩ sold_car = ∅"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="E" org.eventb.core.identifier="sold_car"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="test_drive"/>
-<org.eventb.core.invariant name=";" org.eventb.core.label="inv9" org.eventb.core.predicate="test_drive ∈ register ⤔ car"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv8" org.eventb.core.predicate="test_drive ∈ register ⤔ (new_car ∪ old_car)"/>
 <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RequestDrive">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="g"/>
-<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="r ∈ register∖dom(test_drive)"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="Not allow user to test drive 2 cars at the same time" org.eventb.core.label="grd1" org.eventb.core.predicate="r ∈ register ∖ dom(test_drive)"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="g ∈ garage"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ dom(location ▷ {g})∖ran(test_drive)"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="Only allow cars to be test driven when it is available in the garage and not been driving by others" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ dom(location ▷ {g})∖ran(test_drive)"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="test_drive ≔ test_drive ∪ {r ↦ c}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EndDrive">
@@ -55,7 +54,7 @@
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="g"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ garage"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="r ∈ dom(test_drive)"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ ran(test_drive) ∩ dom(location ▷ {g})"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="Only end drive for cars in the garage and is been driving" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ ran(test_drive) ∩ dom(location ▷ {g})"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="test_drive ≔ test_drive ⩥ {c}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="TransferCar">
@@ -65,24 +64,23 @@
 <org.eventb.core.guard name="+" org.eventb.core.label="grd1" org.eventb.core.predicate="from ∈ garage"/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="to ∈ garage"/>
 <org.eventb.core.guard name="0" org.eventb.core.label="grd3" org.eventb.core.predicate="from ≠ to"/>
-<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="c ∈ car"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="c ∈ (old_car ∪ new_car)"/>
 <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="location(c) = from"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="location ≔ location  {c ↦ to}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="PurchaseCar">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="g"/>
-<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ CAR∖car"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="c ∈ CAR∖(old_car ∪ new_car ∪ sold_car)" org.eventb.core.theorem="true"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="g ∈ garage"/>
 <org.eventb.core.action name="," org.eventb.core.assignment="new_car ≔ new_car ∪ {c}" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="." org.eventb.core.assignment="car ≔ car ∪ {c}" org.eventb.core.label="act2"/>
-<org.eventb.core.action name="-" org.eventb.core.assignment="location(c) ≔ g" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="location(c) ≔ g" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SellOldCar">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="o"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ garage"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="old_car ≔ old_car ∖ {o}" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="," org.eventb.core.assignment="car ≔ car ∖ {o}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="sold_car ≔ sold_car ∪ {o}" org.eventb.core.label="act4"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="location ≔ {o} ⩤ location" org.eventb.core.label="act3"/>
 <org.eventb.core.parameter name="+" org.eventb.core.identifier="g"/>
 <org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="o ∈ (old_car ∩ dom(location ▷ {g})) ∖ ran(test_drive) "/>
@@ -93,7 +91,7 @@
 <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ garage"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="n ∈ (new_car ∩ dom(location ▷ {g})) ∖ ran(test_drive)"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="new_car ≔ new_car ∖ {n}" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="," org.eventb.core.assignment="car ≔ car ∖ {n}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="sold_car ≔ sold_car ∪ {n}" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="location ≔ {n} ⩤ location" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ExchangeOldCarForNewCar">
@@ -103,10 +101,10 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ garage"/>
 <org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="n ∈ (new_car ∩ dom(location ▷ {g})) ∖ ran(test_drive) "/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="new_car ≔ new_car ∖ {n}" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="0" org.eventb.core.assignment="car ≔ (car ∖ {n}) ∪ {o}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="sold_car ≔ sold_car ∪ {n}" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="4" org.eventb.core.assignment="old_car ≔ old_car ∪ {o}" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="location ≔ ({n} ⩤ location) ∪ {o ↦ g}" org.eventb.core.label="act4"/>
-<org.eventb.core.guard name="2" org.eventb.core.label="grd3" org.eventb.core.predicate="o ∈ CAR∖car"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd3" org.eventb.core.predicate="o ∈ CAR ∖ (new_car ∪ old_car ∪ sold_car)"/>
 </org.eventb.core.event>
 <org.eventb.core.seesContext name="A" org.eventb.core.target="C1"/>
 <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ListCar">

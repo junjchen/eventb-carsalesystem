@@ -88,23 +88,33 @@
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p5"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="garage⊆GARAGE">
 <org.eventb.core.prIdent name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.prIdent name="garage" org.eventb.core.type="ℙ(GARAGE)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="car⊆CAR">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="old_car⊆CAR">
 <org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.prIdent name="car" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="old_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="d∈DATE">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATE">
 <org.eventb.core.prIdent name="DATE" org.eventb.core.type="ℙ(DATE)"/>
 <org.eventb.core.prIdent name="d" org.eventb.core.type="DATE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="sold_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="sold_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USER">
 <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
 <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USER)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="new_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="new_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
@@ -144,23 +154,33 @@
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p5"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="garage⊆GARAGE">
 <org.eventb.core.prIdent name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.prIdent name="garage" org.eventb.core.type="ℙ(GARAGE)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="car⊆CAR">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="old_car⊆CAR">
 <org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.prIdent name="car" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="old_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="d∈DATE">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATE">
 <org.eventb.core.prIdent name="DATE" org.eventb.core.type="ℙ(DATE)"/>
 <org.eventb.core.prIdent name="d" org.eventb.core.type="DATE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="sold_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="sold_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USER">
 <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
 <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USER)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="new_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="new_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
@@ -200,23 +220,33 @@
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p5"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="garage⊆GARAGE">
 <org.eventb.core.prIdent name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.prIdent name="garage" org.eventb.core.type="ℙ(GARAGE)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="car⊆CAR">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="old_car⊆CAR">
 <org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.prIdent name="car" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="old_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="d∈DATE">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATE">
 <org.eventb.core.prIdent name="DATE" org.eventb.core.type="ℙ(DATE)"/>
 <org.eventb.core.prIdent name="d" org.eventb.core.type="DATE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="sold_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="sold_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USER">
 <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
 <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USER)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="new_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="new_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
@@ -305,23 +335,33 @@
 <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
 <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p2"/>
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p5"/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="garage⊆GARAGE">
 <org.eventb.core.prIdent name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.prIdent name="garage" org.eventb.core.type="ℙ(GARAGE)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p2" org.eventb.core.predicate="car⊆CAR">
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="old_car⊆CAR">
 <org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.prIdent name="car" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="old_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p3" org.eventb.core.predicate="d∈DATE">
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATE">
 <org.eventb.core.prIdent name="DATE" org.eventb.core.type="ℙ(DATE)"/>
 <org.eventb.core.prIdent name="d" org.eventb.core.type="DATE"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="sold_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="sold_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USER">
 <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
 <org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USER)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="new_car⊆CAR">
+<org.eventb.core.prIdent name="CAR" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.prIdent name="new_car" org.eventb.core.type="ℙ(CAR)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>

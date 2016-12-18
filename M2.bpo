@@ -1,233 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="15">
+<org.eventb.core.poFile org.eventb.core.poStamp="26">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
 <org.eventb.core.poIdentifier name="CAR" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
 <org.eventb.core.poIdentifier name="DATE" org.eventb.core.type="ℙ(DATE)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="15">
-<org.eventb.core.poIdentifier name="car" org.eventb.core.type="ℙ(CAR)"/>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="garage" org.eventb.core.type="ℙ(GARAGE)"/>
 <org.eventb.core.poIdentifier name="location" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
 <org.eventb.core.poIdentifier name="new_car" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="old_car" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="purchase_date" org.eventb.core.type="ℙ(CAR×DATE)"/>
 <org.eventb.core.poIdentifier name="register" org.eventb.core.type="ℙ(USER)"/>
+<org.eventb.core.poIdentifier name="sold_car" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="sold_date" org.eventb.core.type="ℙ(CAR×DATE)"/>
 <org.eventb.core.poIdentifier name="test_drive" org.eventb.core.type="ℙ(USER×CAR)"/>
 <org.eventb.core.poPredicate name="purchase_datf" org.eventb.core.predicate="register⊆USER" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#)"/>
 <org.eventb.core.poPredicate name="purchase_datg" org.eventb.core.predicate="garage⊆GARAGE" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#+"/>
-<org.eventb.core.poPredicate name="purchase_dath" org.eventb.core.predicate="car⊆CAR" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#-"/>
-<org.eventb.core.poPredicate name="purchase_dati" org.eventb.core.predicate="location∈car → garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#\/"/>
-<org.eventb.core.poPredicate name="purchase_datj" org.eventb.core.predicate="new_car⊆car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#5"/>
-<org.eventb.core.poPredicate name="purchase_datk" org.eventb.core.predicate="old_car⊆car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#7"/>
-<org.eventb.core.poPredicate name="purchase_datl" org.eventb.core.predicate="new_car∩old_car=(∅ ⦂ ℙ(CAR))" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#8"/>
-<org.eventb.core.poPredicate name="purchase_datm" org.eventb.core.predicate="new_car∪old_car=car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#9"/>
-<org.eventb.core.poPredicate name="purchase_datn" org.eventb.core.predicate="test_drive∈register ⤔ car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#;"/>
+<org.eventb.core.poPredicate name="purchase_dath" org.eventb.core.predicate="sold_car⊆CAR" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#-"/>
+<org.eventb.core.poPredicate name="purchase_dati" org.eventb.core.predicate="old_car⊆CAR" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="purchase_datj" org.eventb.core.predicate="new_car⊆CAR" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#5"/>
+<org.eventb.core.poPredicate name="purchase_datk" org.eventb.core.predicate="location∈new_car∪old_car → garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#7"/>
+<org.eventb.core.poPredicate name="purchase_datl" org.eventb.core.predicate="new_car∩old_car∩sold_car=(∅ ⦂ ℙ(CAR))" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#8"/>
+<org.eventb.core.poPredicate name="purchase_datm" org.eventb.core.predicate="test_drive∈register ⤔ new_car∪old_car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#;"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datf"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CAR×DATE))∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#B"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datf"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CAR×DATE))∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#B"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datf" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="test_drive'" org.eventb.core.type="ℙ(USER×CAR)"/>
-<org.eventb.core.poIdentifier name="car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
-<org.eventb.core.poIdentifier name="purchase_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER)"/>
-<org.eventb.core.poIdentifier name="new_car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="sold_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="old_car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="garage'" org.eventb.core.type="ℙ(GARAGE)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datf" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datf" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datg" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datf" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
 <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datg" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datg" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datf" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datf" org.eventb.core.poStamp="18">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈USER ∖ register" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#0|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_dath" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datg" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="u" org.eventb.core.type="USER"/>
 <org.eventb.core.poIdentifier name="register'" org.eventb.core.type="ℙ(USER)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_dath" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_dath" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datg" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datg" org.eventb.core.poStamp="17">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈register ∖ dom(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#1|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_dati" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_dath" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
 <org.eventb.core.poIdentifier name="garage'" org.eventb.core.type="ℙ(GARAGE)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_dati" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_dati" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_dath" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_dath" org.eventb.core.poStamp="17">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈GARAGE ∖ garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#2|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datj" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_dati" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="test_drive'" org.eventb.core.type="ℙ(USER×CAR)"/>
 <org.eventb.core.poIdentifier name="r" org.eventb.core.type="USER"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
 <org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datj" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datj" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_dati" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_dati" org.eventb.core.poStamp="17">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="r∈register ∖ dom(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#=|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#=|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c∈dom(location ▷ {g}) ∖ ran(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#=|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datk" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datj" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="test_drive'" org.eventb.core.type="ℙ(USER×CAR)"/>
 <org.eventb.core.poIdentifier name="r" org.eventb.core.type="USER"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
 <org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datk" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datk" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datj" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datj" org.eventb.core.poStamp="17">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈dom(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c∈ran(test_drive)∩dom(location ▷ {g})" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datl" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datk" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
 <org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
 <org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATE"/>
 <org.eventb.core.poIdentifier name="to" org.eventb.core.type="GARAGE"/>
 <org.eventb.core.poIdentifier name="from" org.eventb.core.type="GARAGE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datl" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datl" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datk" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datk" org.eventb.core.poStamp="19">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="from∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="to∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#,"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="from≠to" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#0"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="c∈car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="c∈old_car∪new_car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#-"/>
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="location(c)=from" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#3|org.eventb.core.guard#."/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="d∈DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#H|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="PurchaseCar/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datm"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="purchase_date{c ↦ d}∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#&gt;"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#I"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#PurchaseCar\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datm" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
-<org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
-<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
-<org.eventb.core.poIdentifier name="purchase_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATE"/>
-<org.eventb.core.poIdentifier name="new_car'" org.eventb.core.type="ℙ(CAR)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datm" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datm" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="c∈CAR ∖ car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#&gt;|org.eventb.core.guard#)"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#&gt;|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="d∈DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#I|org.eventb.core.guard#)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="SellOldCar/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datn"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="sold_date∪{o ↦ d}∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#?"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#J"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#SellOldCar\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datn" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
-<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
-<org.eventb.core.poIdentifier name="o" org.eventb.core.type="CAR"/>
-<org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATE"/>
-<org.eventb.core.poIdentifier name="sold_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="old_car'" org.eventb.core.type="ℙ(CAR)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datn" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datn" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#?|org.eventb.core.guard#("/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="o∈old_car∩dom(location ▷ {g}) ∖ ran(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#?|org.eventb.core.guard#-"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="d∈DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#J|org.eventb.core.guard#)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="SellNewCar/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_dato"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="sold_date∪{n ↦ d}∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#D"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#K"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#SellNewCar\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_dato" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="n" org.eventb.core.type="CAR"/>
-<org.eventb.core.poIdentifier name="car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
-<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
-<org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATE"/>
-<org.eventb.core.poIdentifier name="new_car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="sold_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_dato" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_dato" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#D|org.eventb.core.guard#)"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="n∈new_car∩dom(location ▷ {g}) ∖ ran(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#D|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="d∈DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#K|org.eventb.core.guard#)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="ExchangeOldCarForNewCar/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datp"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="purchase_date∪{o ↦ d}∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#@"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#L"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#ExchangeOldCarForNewCar\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="ExchangeOldCarForNewCar/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="15">
-<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpurchase_datp"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="sold_date∪{n ↦ d}∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#@"/>
-<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#L"/>
-<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
-<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#ExchangeOldCarForNewCar\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
-<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
-</org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datp" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poIdentifier name="n" org.eventb.core.type="CAR"/>
-<org.eventb.core.poIdentifier name="car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
-<org.eventb.core.poIdentifier name="location'" org.eventb.core.type="ℙ(CAR×GARAGE)"/>
-<org.eventb.core.poIdentifier name="purchase_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="o" org.eventb.core.type="CAR"/>
-<org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATE"/>
-<org.eventb.core.poIdentifier name="new_car'" org.eventb.core.type="ℙ(CAR)"/>
-<org.eventb.core.poIdentifier name="sold_date'" org.eventb.core.type="ℙ(CAR×DATE)"/>
-<org.eventb.core.poIdentifier name="old_car'" org.eventb.core.type="ℙ(CAR)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datp" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datp" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#@|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="n∈new_car∩dom(location ▷ {g}) ∖ ran(test_drive)" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#@|org.eventb.core.guard#,"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="o∈CAR ∖ car" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#@|org.eventb.core.guard#2"/>
-<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="d∈DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#L|org.eventb.core.guard#)"/>
-</org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datq" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTpurchase_datl" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="26">
 <org.eventb.core.poIdentifier name="result" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datq" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datq" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPpurchase_datl" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpurchase_datl" org.eventb.core.poStamp="26">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="result=dom(location ▷ {g})" org.eventb.core.source="/CarSystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#B|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="15">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/CarSystem/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="17">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="purchase_date∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#T"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="sold_date∈CAR ⇸ DATE" org.eventb.core.source="/CarSystem/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#V"/>
 </org.eventb.core.poPredicateSet>
