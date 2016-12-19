@@ -35,10 +35,12 @@
 <org.eventb.core.invariant name="5" org.eventb.core.label="inv5" org.eventb.core.predicate="new_car ⊆ CAR"/>
 <org.eventb.core.variable name="6" org.eventb.core.identifier="old_car"/>
 <org.eventb.core.invariant name="7" org.eventb.core.label="inv6" org.eventb.core.predicate="location ∈ (new_car ∪ old_car) → garage"/>
-<org.eventb.core.invariant name="8" org.eventb.core.label="inv7" org.eventb.core.predicate="new_car ∩ old_car ∩ sold_car = ∅"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="inv7" org.eventb.core.predicate="new_car ∩ old_car = ∅"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="E" org.eventb.core.identifier="sold_car"/>
 <org.eventb.core.variable name=":" org.eventb.core.identifier="test_drive"/>
-<org.eventb.core.invariant name=";" org.eventb.core.label="inv8" org.eventb.core.predicate="test_drive ∈ register ⤔ (new_car ∪ old_car)"/>
+<org.eventb.core.invariant name="F" org.eventb.core.label="inv8" org.eventb.core.predicate="new_car ∩ sold_car = ∅"/>
+<org.eventb.core.invariant name="G" org.eventb.core.label="inv9" org.eventb.core.predicate="old_car ∩ sold_car = ∅"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="inv10" org.eventb.core.predicate="test_drive ∈ register ⤔ (new_car ∪ old_car)"/>
 <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RequestDrive">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
@@ -104,7 +106,7 @@
 <org.eventb.core.action name="0" org.eventb.core.assignment="sold_car ≔ sold_car ∪ {n}" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="4" org.eventb.core.assignment="old_car ≔ old_car ∪ {o}" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="location ≔ ({n} ⩤ location) ∪ {o ↦ g}" org.eventb.core.label="act4"/>
-<org.eventb.core.guard name="2" org.eventb.core.label="grd3" org.eventb.core.predicate="o ∈ CAR ∖ (new_car ∪ old_car ∪ sold_car)"/>
+<org.eventb.core.guard name="2" org.eventb.core.label="grd3" org.eventb.core.predicate="o ∈ CAR ∖ (new_car ∪ old_car)"/>
 </org.eventb.core.event>
 <org.eventb.core.seesContext name="A" org.eventb.core.target="C1"/>
 <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ListCar">
