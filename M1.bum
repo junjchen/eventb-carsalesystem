@@ -52,11 +52,9 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EndDrive">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="c"/>
-<org.eventb.core.parameter name="(" org.eventb.core.identifier="r"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="g"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="g ∈ garage"/>
-<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="r ∈ dom(test_drive)"/>
-<org.eventb.core.guard name="," org.eventb.core.comment="Only end drive for cars in the garage and is been driving" org.eventb.core.label="grd3" org.eventb.core.predicate="c ∈ ran(test_drive) ∩ dom(location ▷ {g})"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="Only end drive for cars in the garage and is been driving" org.eventb.core.label="grd2" org.eventb.core.predicate="c ∈ ran(test_drive) ∩ dom(location ▷ {g})"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="test_drive ≔ test_drive ⩥ {c}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="TransferCar">

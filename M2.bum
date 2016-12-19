@@ -64,9 +64,10 @@
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ListCar"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="start_d"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="end_d"/>
-<org.eventb.core.guard name="+" org.eventb.core.label="grd4" org.eventb.core.predicate="start_d ∈ ℤ" org.eventb.core.theorem="true"/>
-<org.eventb.core.guard name="," org.eventb.core.label="grd5" org.eventb.core.predicate="end_d ∈ ℤ"/>
-<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="result = dom(location ▷ {g}) ∩ (purchase_date∼[{z∣z ∈ ℤ ∧ z ≤ end_d ∧ z ≥ start_d }] ∪ last_transfer_date∼[{z∣z ∈ ℤ ∧ z ≤ end_d ∧ z ≥ start_d }])"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="start_d ∈ ℤ" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="end_d ∈ ℤ"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="start_d ≤ end_d"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd6" org.eventb.core.predicate="result = dom(location ▷ {g}) ∩ (purchase_date∼[{z∣z ∈ ℤ ∧ z ≤ end_d ∧ z ≥ start_d }] ∪ last_transfer_date∼[{z∣z ∈ ℤ ∧ z ≤ end_d ∧ z ≥ start_d }])"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="R" org.eventb.core.identifier="purchase_date"/>
 <org.eventb.core.invariant name="S" org.eventb.core.label="inv1" org.eventb.core.predicate="purchase_date ∈ (new_car ∪ old_car ∪ sold_car) ⇸ ℤ"/>

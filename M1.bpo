@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="CAR" org.eventb.core.type="ℙ(CAR)"/>
 <org.eventb.core.poIdentifier name="GARAGE" org.eventb.core.type="ℙ(GARAGE)"/>
@@ -128,7 +128,7 @@
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#=|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c∈dom(location ▷ {g}) ∖ ran(test_drive)" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#=|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="EndDrive/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="EndDrive/inv10/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTALLHYPtest_drivk"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="test_drive ⩥ {c}∈register ⤔ new_car∪old_car" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#;"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C"/>
@@ -136,16 +136,14 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poSequent#EndDrive\/inv10\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD9"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTtest_drivk" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTtest_drivk" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="2">
 <org.eventb.core.poIdentifier name="test_drive'" org.eventb.core.type="ℙ(USER×CAR)"/>
-<org.eventb.core.poIdentifier name="r" org.eventb.core.type="USER"/>
 <org.eventb.core.poIdentifier name="c" org.eventb.core.type="CAR"/>
 <org.eventb.core.poIdentifier name="g" org.eventb.core.type="GARAGE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPtest_drivk" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTtest_drivk" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPtest_drivk" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTIDENTtest_drivk" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="g∈garage" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#*"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="r∈dom(test_drive)" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#+"/>
-<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="c∈ran(test_drive)∩dom(location ▷ {g})" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#,"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="c∈ran(test_drive)∩dom(location ▷ {g})" org.eventb.core.source="/eventb-carsalesystem/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#C|org.eventb.core.guard#,"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poSequent name="TransferCar/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/eventb-carsalesystem/M1.bpo|org.eventb.core.poFile#M1|org.eventb.core.poPredicateSet#EVTHYPtest_drivl*"/>
